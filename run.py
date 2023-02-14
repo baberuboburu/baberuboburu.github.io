@@ -56,10 +56,14 @@ predict_array = np.transpose(predict_array)
 # 対象の馬が3着以内に入ってくる期待値
 predict = model.predict(predict_array)
 predict = predict.tolist()
-print('')
+dic_name_predict = {}
 for i in range(len(horses)):
   predict[i] = 1-predict[i]
-  print(f'    {horses[i]["name"]}:{predict[i]}')
+  dic_name_predict[horses[i]['name']] = predict[i]
+dic_name_predict = sorted(dic_name_predict.items(),key=lambda x:x[1],reverse=True)
+print('')
+for i in dic_name_predict:
+  print(f'    {i[0]}:{i[1]}')
 print('')
 
 

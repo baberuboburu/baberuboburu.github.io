@@ -9,8 +9,8 @@ from selenium.webdriver.common.by import By
 year = '2023'
 place = '09'
 code = '0102'
-race = '12'
-horse_number = 16
+race = '09'
+horse_number = 17
 
 
 # 変数の定義
