@@ -19,9 +19,9 @@ run.pyを実行時、「selenium.common.exceptions.TimeoutException: Message: �
 
   
 **システムの概要**  
-scr.pyでデータをスクレイピング  
-bind.pyでデータを結合  
-arrange.pyでデータを整形  
-learning.pyでモデルを学習  
-subject_scr.pyで対象レースをスクレイピング（run.py実行時に自動で実行される）  
-run.pyで実行  
+ - scr.pyでデータをスクレイピング  
+ - bind.pyでデータを結合  
+ - arrange.pyでデータを整形  
+ - learning.pyでモデルを学習  
+ - subject_scr.pyで対象レースをスクレイピング（run.py実行時に自動で実行される）  
+ - run.pyで実行  
