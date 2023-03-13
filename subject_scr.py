@@ -1,30 +1,45 @@
 import pandas as pd
 import numpy as np
 import csv
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 # 入力欄
 year = '2023'
 place = '09'
-code = '0102'
-race = '09'
-horse_number = 17
+code = '0110'
+race = '12'
 
 
 # 変数の定義
 url = f'https://race.netkeiba.com/race/shutuba.html?race_id={year}{place}{code}{race}&rf=race_submenu'
 browser = webdriver.Chrome()
+xpath = '/html/body/div[1]/div[3]/div[2]/table/tbody'
 
+
+
+# ブラウザの取得
+browser.get(url)
+
+
+# 出場馬数の取得
+path_horse = f'{xpath}/tr'
+WebDriverWait(browser, 10).until(
+    EC.presence_of_element_located((By.XPATH,path_horse))
+)
+element_parent = browser.find_elements(By.XPATH,path_horse)
+horse_number = len(element_parent)
+print('出場馬数：',horse_number)
 
 # サイトから情報を取り出す関数
 matrix = []
 def getMatrix():
-  browser.get(url)
   params_numbers = [4,10,5,6,1,9]
   # 枠順の取得
-  xpath = f'/html/body/div[1]/div[3]/div[2]/table/tbody'
   texts = []
   for i in range(horse_number):
     z = i+1

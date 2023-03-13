@@ -1,5 +1,5 @@
-import learning
-import subject_scr
+import learning as learning
+import subject_scr as subject_scr
 import numpy as np
 
 
@@ -20,6 +20,8 @@ horse_weights  = subject_scr.horse_weights
 # 対象のレースの配列を作成
 horses = []
 for i in range(subject_scr.horse_number):
+  if horse_weights[i]=='':
+    horse_weights[i]=480
   horse = {'name':names[i] , 'odds':float(oddss[i]) , 'old':int(olds[i]) , 'jockey_weight':float(jockey_weights[i]) , 'frame_order':int(frame_orders[i]) , 'horse_weight':float(horse_weights[i]) }
   horses.append(horse)
 
