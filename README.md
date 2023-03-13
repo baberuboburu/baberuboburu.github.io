@@ -18,7 +18,7 @@ run.pyを実行時、「selenium.common.exceptions.TimeoutException: Message: �
 対処方法として、subject_scr.pyの「#出場馬数の取得」の「WebDriverWait(browser, 10)」の10を20や30に変更して実行すると良い。  
   
   
-**システムの概要**  
+**システムの概要**
  - scr.pyでデータをスクレイピング  
  - bind.pyでデータを結合  
  - arrange.pyでデータを整形  
